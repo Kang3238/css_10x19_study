@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=B612+Mono&family=DM+Serif+Display:ital@0;1&display=swap");
+@import "_variables";
+@import "_elements";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Serif Display", monospace;
+  background-color: $bg;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  height: 100vh;
+  gap: 1px;
+  .nav{
+    grid-column-start: -2 ;
+  }
+  .photo{
+    background-image: url("http://10x19.co/staging/wp-content/uploads/2019/12/derosa_4-768x768.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  div, span{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $bg;
+
+  }
+  .number_div{
+    display: grid;
+    background-color: $bg;
+    gap: 1px;
+    align-items: stretch;
+    justify-content: stretch;
+    font-weight: 500;
+    
+    .number{
+      transition: background-color .2s, color .2s;
+      &:hover{
+        cursor: pointer;
+        background-color: $bg;
+        color: white;
+        
+      }
+    }
+  }
+  .scroll span{
+    animation: scroll_text 5s infinite;
+    white-space: nowrap;
+  }
+}
+@keyframes scroll_text {
+  0%{
+    transform: translateX(-100px);
+  }
+  50%{
+    transform: translateX(100px);
+  }
+  100%{
+    transform: translateX(-100px);
+  }
+}
